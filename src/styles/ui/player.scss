@@ -1,0 +1,127 @@
+.player {
+  z-index: 10;
+  position: fixed;
+  height: 115px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 20px 56px 20px 96px;
+  backdrop-filter: blur(12px);
+  background-color: rgba(16, 16, 16, 0.51);
+  @include Flex;
+  justify-content: space-between;
+  .album {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50px 1fr;
+    column-gap: 13px;
+
+    p {
+      font-size: 14px;
+      line-height: 120%;
+    }
+
+    color: #ffffff;
+    img {
+      grid-row: 1 / span 2;
+      width: 49px;
+      height: 49px;
+      box-shadow: 0px 15px 17px -10px rgba(0, 0, 0, 0.61);
+      border-radius: 14px;
+    }
+    .artist {
+      color: rgba(255, 255, 255, 0.44);
+    }
+  }
+  .player_controls {
+    @include Flex;
+    flex-direction: column;
+    justify-content: center;
+    width: (749px);
+    .player_control {
+      margin-bottom: 30px;
+      svg {
+        margin-right: 40px;
+        color: #fff;
+        padding-left: 2px;
+      }
+      div {
+        display: inline;
+        svg {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: #facd66;
+          box-shadow: 0px 0px 18px rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .progressbar {
+    width: 749px;
+    background: rgba(255, 255, 255, 0.04);
+    height: 4px;
+    border-radius: 50px;
+    .progress {
+      width: 0%;
+      height: 100%;
+      background: #facd66;
+      border-radius: 50px;
+      position: relative;
+      .marker {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #facd66;
+        width: 8px;
+        height: 8px;
+        border-radius: 50px;
+        &::after {
+          position: absolute;
+          right: 50%;
+          top: 50%;
+          transform: translate(50%, -50%);
+          width: 12px;
+          height: 12px;
+          content: "";
+          border: 1px solid #fff;
+          border-radius: inherit;
+        }
+      }
+    }
+  }
+  .volume_control {
+    @include Flex;
+    gap: 20px;
+    .progressbar {
+      display: inline-block;
+      width: 160px;
+    }
+    svg {
+      color: #ffffff;
+    }
+  }
+  @media (max-width: 768px) {
+    padding-inline: 30px;
+    .progressbar,
+    .volume_control {
+      display: none;
+    }
+    .player_controls {
+      width: auto;
+      .player_control {
+        margin: 0;
+        svg:nth-child(1),
+        :nth-child(2),
+        :nth-child(5) {
+          display: none;
+        }
+        svg:nth-child(4) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

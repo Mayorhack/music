@@ -1,0 +1,106 @@
+.albums {
+  width: 100%;
+  header {
+    @include Flex;
+    gap: 27px;
+
+    padding: 30px 0;
+    color: #fff;
+    .card-component {
+      width: 286px;
+      height: 288px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    p {
+      margin-block: 10px;
+      width: 80%;
+    }
+    .buttons {
+      @include Flex;
+      margin-top: 30px;
+      gap: 10px;
+      .shadow-card-component {
+        width: auto;
+        @include Flex;
+        padding: 10px;
+        gap: 10px;
+        svg {
+          path {
+            stroke: transparent;
+          }
+        }
+      }
+      .shadow-card-component:last-child {
+        border-radius: 50%;
+      }
+    }
+  }
+  .shadow-card-component {
+    @include Flex;
+    max-width: 1125px;
+    gap: 100px;
+
+    padding: 8px;
+    .flex {
+      @include Flex;
+      gap: 10px;
+    }
+    .time,
+    .text {
+      @include Flex;
+      gap: 180px;
+    }
+    svg {
+      path {
+        stroke: #fff;
+      }
+    }
+    p {
+      width: 150px;
+    }
+    margin-bottom: 10px;
+  }
+  margin-bottom: 115px;
+  @media (max-width: 768px) {
+    padding: 0 30px;
+    header {
+      display: block;
+      .card-component {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .shadow-card-component {
+      gap: 0;
+      display: grid;
+      grid-template-columns: 75px 1fr 100px;
+      .fav {
+        display: none;
+      }
+      .time,
+      .text {
+        display: block;
+      }
+      .time {
+        gap: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        svg,
+        p {
+          display: block;
+          width: 100%;
+          path {
+            width: 100px;
+            justify-self: end;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin Flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin Card {
+  width: 100%;
+  color: #333;
+}
+
+@mixin Shadow-Card() {
+  width: 100%;
+
+  color: #fff;
+  background: rgba(51, 55, 59, 0.37);
+  backdrop-filter: blur(5px);
+
+  border-radius: 15px;
+}

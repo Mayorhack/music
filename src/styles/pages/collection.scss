@@ -1,0 +1,86 @@
+.collections {
+  .collection_tabs {
+    margin-top: 30px;
+    li {
+      list-style-type: none;
+    }
+    @include Flex;
+
+    .collection_tab {
+      font-size: 14px;
+      line-height: 120%;
+      margin-right: 10px;
+      border-radius: 27px;
+      border: 1px solid #efeee040;
+      margin-bottom: 23px;
+
+      .shadow-card-component {
+        padding: 10px 20px;
+        width: auto;
+
+        background-color: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        p {
+          color: #efeee040;
+        }
+      }
+      outline: 0;
+    }
+    .active_tab {
+      background-color: #facd66;
+      .shadow-card-component {
+        p {
+          color: #1d2123;
+        }
+      }
+    }
+  }
+  .card-component {
+    position: relative;
+    width: 213px;
+    height: 234px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .textss {
+      position: absolute;
+      left: 19px;
+      bottom: -20px;
+      transition: transform 0.5s ease;
+      h4 {
+        color: #fff;
+      }
+      p {
+        font-size: 10px;
+      }
+      .likes {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    }
+    svg {
+      position: absolute;
+      right: 23px;
+      bottom: 22px;
+      opacity: 0;
+      transition: all 0.7s;
+    }
+    &:hover {
+      border-radius: 20px;
+      img {
+        transform: scale(1.39);
+      }
+      svg {
+        opacity: 1;
+      }
+      .textss {
+        transform: translateY(-27px);
+      }
+    }
+  }
+}
