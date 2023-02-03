@@ -27,7 +27,7 @@ export const songdata = [
   {
     id: 0,
     logo: charts,
-    title: "Golden age of 80s",
+    title: "Golden age of 90s",
     artist: "Sean swadder",
     length: "2:34:45",
   },
